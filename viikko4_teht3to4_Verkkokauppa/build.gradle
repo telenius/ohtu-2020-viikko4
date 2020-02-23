@@ -3,6 +3,9 @@ apply plugin: 'java'
 
 apply plugin: 'application'
 
+// otetaan jacoco test reportit kayttoon
+apply plugin: "jacoco"
+
 repositories {
     jcenter()
 }

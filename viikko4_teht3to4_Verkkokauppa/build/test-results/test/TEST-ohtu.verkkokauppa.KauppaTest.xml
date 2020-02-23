@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ohtu.verkkokauppa.KauppaTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2020-02-23T12:00:40" hostname="DESKTOP-1Q8SKGO" time="0.795">
+<testsuite name="ohtu.verkkokauppa.KauppaTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2020-02-23T15:13:03" hostname="DESKTOP-1Q8SKGO" time="1.858">
   <properties/>
-  <testcase name="ostetaanLoppunutTuoteJaNormaaliTuoteJaTilisiirtoKutsutaanOikeillaArvoilla" classname="ohtu.verkkokauppa.KauppaTest" time="0.776"/>
-  <testcase name="ostetaanKaksiEriTuotettaJaTilisiirtoKutsutaanOikeillaArvoilla" classname="ohtu.verkkokauppa.KauppaTest" time="0.004"/>
-  <testcase name="ostoksenPaaytyttyaPankinMetodiaTilisiirtoKutsutaan" classname="ohtu.verkkokauppa.KauppaTest" time="0.005"/>
-  <testcase name="ostetaanKaksiSamaaTuotettaJaTilisiirtoKutsutaanOikeillaArvoilla" classname="ohtu.verkkokauppa.KauppaTest" time="0.004"/>
-  <testcase name="ostoksenPaaytyttyaPankinMetodiaTilisiirtoKutsutaanOikeillaArvoilla" classname="ohtu.verkkokauppa.KauppaTest" time="0.004"/>
+  <testcase name="aloitaAsiointiNollaaKaupanTiedot" classname="ohtu.verkkokauppa.KauppaTest" time="1.81"/>
+  <testcase name="ostetaanLoppunutTuoteJaNormaaliTuoteJaTilisiirtoKutsutaanOikeillaArvoilla" classname="ohtu.verkkokauppa.KauppaTest" time="0.006"/>
+  <testcase name="ostetaanKaksiEriTuotettaJaTilisiirtoKutsutaanOikeillaArvoilla" classname="ohtu.verkkokauppa.KauppaTest" time="0.006"/>
+  <testcase name="poistetaanTuoteKorista" classname="ohtu.verkkokauppa.KauppaTest" time="0.007"/>
+  <testcase name="ostoksenPaaytyttyaPankinMetodiaTilisiirtoKutsutaan" classname="ohtu.verkkokauppa.KauppaTest" time="0.006"/>
+  <testcase name="ostetaanKaksiSamaaTuotettaJaTilisiirtoKutsutaanOikeillaArvoilla" classname="ohtu.verkkokauppa.KauppaTest" time="0.006"/>
+  <testcase name="uusiViitenumeroJokaMaksulle" classname="ohtu.verkkokauppa.KauppaTest" time="0.005"/>
+  <testcase name="ostoksenPaaytyttyaPankinMetodiaTilisiirtoKutsutaanOikeillaArvoilla" classname="ohtu.verkkokauppa.KauppaTest" time="0.006"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
