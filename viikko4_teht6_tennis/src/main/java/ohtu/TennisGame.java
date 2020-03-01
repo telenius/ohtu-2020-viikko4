@@ -1,13 +1,14 @@
 package ohtu;
 import ohtu.Player;
+import static java.lang.Math.abs;
 
 public class TennisGame {
       
     private Player player1;
     private Player player2;
-	
+    
     private static String[] pointsAsText = { "Love", "Fifteen", "Thirty", "Forty" };
-        
+    
     private Boolean pointsAreEven(Player player1, Player player2) {
         return ( player1.score() == player2.score() );
     }
@@ -15,10 +16,17 @@ public class TennisGame {
     private Boolean neitherHasMoreThanThreePoints(Player player1, Player player2) {
         return ( (player1.score() < 4) && (player2.score() < 4) );
     }
-
+    
     private Boolean atLeastOnePlayerHasMoreThanThreePoints(Player player1, Player player2) {
         return ( (player1.score() > 3) || (player2.score() > 3) );
-	}
+    }
+
+    private Boolean weHaveAwinner(Player player1, Player player2) {
+        if ( abs( player1.score() - player2.score() ) > 1 )
+            return true ;
+        else
+            return false ;
+    }
 
     public TennisGame(String namePlayer1, String namePlayer2) {
         
