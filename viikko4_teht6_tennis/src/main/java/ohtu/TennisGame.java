@@ -41,6 +41,16 @@ public class TennisGame {
         else
             player2.addPoint();
     }
+    
+    public String leadingPlayer(Player player1, Player player2){
+        
+        if (player1.score() > player2.score())
+            return player1.name();
+        else 
+            return player2.name();
+        
+        
+    }
 
     public String getScore() {
         String score = "";
@@ -51,56 +61,25 @@ public class TennisGame {
         
         if (pointsAreEven(player1, player2))
         {
-            switch (player1Score)
-            {
-                case 0:
-                        score = "Love-All";
-                    break;
-                case 1:
-                        score = "Fifteen-All";
-                    break;
-                case 2:
-                        score = "Thirty-All";
-                    break;
-                case 3:
-                        score = "Forty-All";
-                    break;
-                default:
-                        score = "Deuce";
-                    break;
-                
-            }
+
+            if(neitherHasMoreThanThreePoints(player1, player2))
+                score = pointsAsText[player1.score()] + "-All";
+            else    
+                score = "Deuce";
         }
         else if (atLeastOnePlayerHasMoreThanThreePoints(player1, player2))
         {
-            int player1ScoreMinusPlayer2Score = player1Score-player2Score;
-            if (player1ScoreMinusPlayer2Score==1) score ="Advantage player1";
-            else if (player1ScoreMinusPlayer2Score ==-1) score ="Advantage player2";
-            else if (player1ScoreMinusPlayer2Score>=2) score = "Win for player1";
-            else score ="Win for player2";
+            String leadingPlayer=leadingPlayer(player1,player2);
+            
+            if(weHaveAwinner(player1,player2))
+                score="Win for " + leadingPlayer;
+            else    
+                score="Advantage " + leadingPlayer;
         }
         else
         {
-            for (int i=1; i<3; i++)
-            {
-                if (i==1) tempScore = player1Score;
-                else { score+="-"; tempScore = player2Score;}
-                switch(tempScore)
-                {
-                    case 0:
-                        score+="Love";
-                        break;
-                    case 1:
-                        score+="Fifteen";
-                        break;
-                    case 2:
-                        score+="Thirty";
-                        break;
-                    case 3:
-                        score+="Forty";
-                        break;
-                }
-            }
+            score = pointsAsText[player1.score()] + "-" + pointsAsText[player2.score()];
+
         }
         return score;
     }
