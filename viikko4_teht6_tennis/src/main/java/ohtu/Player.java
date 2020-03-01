@@ -10,16 +10,16 @@ public class Player {
         this.score = score;
     }
 
-    public void wonPoint() {
-           score += 1;
+    public void addPoint() {
+           this.score += 1;
     }
 
     public int score() {
-           return score;
+           return this.score;
     }
 
     public String name() {
-           return name;
+           return this.name;
     }
     
 }

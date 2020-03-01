@@ -3,26 +3,41 @@ import ohtu.Player;
 
 public class TennisGame {
     
-    private int player1Score = 0;
-    private int player2Score = 0;
-    private String player1Name;
-    private String player2Name;
+    // private int player1Score = 0;
+    // private int player2Score = 0;
+    // private String player1Name;
+    // private String player2Name;
+    
+    private Player player1;
+    private Player player2;
 
     public TennisGame(String namePlayer1, String namePlayer2) {
-        player1Name = namePlayer1;
-        player2Name = namePlayer2;
+        // player1Name = namePlayer1;
+        // player2Name = namePlayer2;
+        
+        player1 = new Player(namePlayer1);
+        player2 = new Player(namePlayer2);
     }
 
     public void wonPoint(String playerName) {
-        if (playerName == player1Name)
-            player1Score += 1;
+        // if (playerName == player1Name)
+        //     player1Score += 1;
+        // else
+        //     player2Score += 1;
+
+        if (playerName == player1.name())
+            player1.addPoint();
         else
-            player2Score += 1;
+            player2.addPoint();
     }
 
     public String getScore() {
         String score = "";
         int tempScore=0;
+        
+        int player1Score = player1.score();
+        int player2Score = player2.score();
+        
         if (player1Score==player2Score)
         {
             switch (player1Score)
