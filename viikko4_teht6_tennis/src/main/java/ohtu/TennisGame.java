@@ -1,4 +1,5 @@
 package ohtu;
+import ohtu.Player;
 
 public class TennisGame {
     
@@ -7,13 +8,13 @@ public class TennisGame {
     private String player1Name;
     private String player2Name;
 
-    public TennisGame(String player1Name, String player2Name) {
-        this.player1Name = player1Name;
-        this.player2Name = player2Name;
+    public TennisGame(String namePlayer1, String namePlayer2) {
+        player1Name = namePlayer1;
+        player2Name = namePlayer2;
     }
 
     public void wonPoint(String playerName) {
-        if (playerName == this.player1Name)
+        if (playerName == player1Name)
             player1Score += 1;
         else
             player2Score += 1;
