@@ -5,6 +5,18 @@ public class TennisGame {
       
     private Player player1;
     private Player player2;
+	
+	private Boolean pointsAreEven(Player player1, Player player2) {
+		return ( player1.score() == player2.score() );
+	}
+
+	private Boolean neitherHasMoreThanThreePoints(Player player1, Player player2) {
+		return ( (player1.score() < 4) && (player2.score() < 4) );
+	}
+	
+	private Boolean atLeastOnePlayerHasMoreThanThreePoints(Player player1, Player player2) {
+		return ( (player1.score() > 3) || (player2.score() > 3) );
+	}
 
     public TennisGame(String namePlayer1, String namePlayer2) {
         
@@ -27,7 +39,7 @@ public class TennisGame {
         int player1Score = player1.score();
         int player2Score = player2.score();
         
-        if (player1Score==player2Score)
+        if (pointsAreEven(player1, player2))
         {
             switch (player1Score)
             {
@@ -49,7 +61,7 @@ public class TennisGame {
                 
             }
         }
-        else if (player1Score>=4 || player2Score>=4)
+        else if (atLeastOnePlayerHasMoreThanThreePoints(player1, player2))
         {
             int player1ScoreMinusPlayer2Score = player1Score-player2Score;
             if (player1ScoreMinusPlayer2Score==1) score ="Advantage player1";
