@@ -53,11 +53,7 @@ public class TennisGame {
     }
 
     public String getScore() {
-        String score = "";
-        int tempScore=0;
-        
-        int player1Score = player1.score();
-        int player2Score = player2.score();
+        String score = "";    
         
         if (pointsAreEven(player1, player2))
         {
