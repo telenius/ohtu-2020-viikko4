@@ -6,16 +6,18 @@ public class TennisGame {
     private Player player1;
     private Player player2;
 	
-	private Boolean pointsAreEven(Player player1, Player player2) {
-		return ( player1.score() == player2.score() );
-	}
+    private static String[] pointsAsText = { "Love", "Fifteen", "Thirty", "Forty" };
+        
+    private Boolean pointsAreEven(Player player1, Player player2) {
+        return ( player1.score() == player2.score() );
+    }
 
-	private Boolean neitherHasMoreThanThreePoints(Player player1, Player player2) {
-		return ( (player1.score() < 4) && (player2.score() < 4) );
-	}
-	
-	private Boolean atLeastOnePlayerHasMoreThanThreePoints(Player player1, Player player2) {
-		return ( (player1.score() > 3) || (player2.score() > 3) );
+    private Boolean neitherHasMoreThanThreePoints(Player player1, Player player2) {
+        return ( (player1.score() < 4) && (player2.score() < 4) );
+    }
+
+    private Boolean atLeastOnePlayerHasMoreThanThreePoints(Player player1, Player player2) {
+        return ( (player1.score() > 3) || (player2.score() > 3) );
 	}
 
     public TennisGame(String namePlayer1, String namePlayer2) {
