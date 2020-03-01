@@ -4,23 +4,23 @@ public class App {
 
     public static void main(String[] args) {
         
-        TennisGame game = new TennisGame("player1", "player2");
+        TennisGame game = new TennisGame("pelaaja1", "pelaaja2");
 
         System.out.println(game.getScore());
 
-        game.wonPoint("player1");
+        game.wonPoint("pelaaja1");
         System.out.println(game.getScore());
     
-        game.wonPoint("player1");
+        game.wonPoint("pelaaja1");
         System.out.println(game.getScore());
     
-        game.wonPoint("player2");
+        game.wonPoint("pelaaja2");
         System.out.println(game.getScore());
     
-        game.wonPoint("player1");
+        game.wonPoint("pelaaja1");
         System.out.println(game.getScore());
     
-        game.wonPoint("player1");
+        game.wonPoint("pelaaja1");
         System.out.println(game.getScore());     
 
     }
