@@ -11,9 +11,9 @@ public class Nollaa extends Komento {
     @Override
     public void suorita() {
         
+        tallennaEdellinen();
         sovellus.nollaa();
-        int tulos = sovellus.tulos();
-        paivitaGUI(tulos);
+        paivitaGUI();
 
     }  
 }

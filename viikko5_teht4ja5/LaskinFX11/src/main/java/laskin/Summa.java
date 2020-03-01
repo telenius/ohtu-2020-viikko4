@@ -10,10 +10,10 @@ public class Summa extends Komento {
 
     @Override
     public void suorita() {
-        
+
+        tallennaEdellinen();        
         sovellus.plus(arvo(syotekentta));
-        int tulos = sovellus.tulos();
-        paivitaGUI(tulos);
+        paivitaGUI();
         
     }  
 }

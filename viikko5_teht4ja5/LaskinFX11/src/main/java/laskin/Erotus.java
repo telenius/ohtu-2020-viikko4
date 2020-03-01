@@ -11,8 +11,8 @@ public class Erotus extends Komento {
     @Override
     public void suorita() {
         
+        tallennaEdellinen();
         sovellus.miinus(arvo(syotekentta));
-        int tulos = sovellus.tulos();
-        paivitaGUI(tulos);
+        paivitaGUI();
     }  
 }

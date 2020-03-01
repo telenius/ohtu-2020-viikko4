@@ -9,7 +9,8 @@ public abstract class Komento {
     protected Button nollaa;
     protected Button undo;
     protected Sovelluslogiikka sovellus;
-    
+    protected int edellinenArvo;
+     
     public Komento(TextField tuloskentta, TextField syotekentta, Button nollaa, Button undo, Sovelluslogiikka sovellus) {
         
         this.tuloskentta = tuloskentta;
@@ -17,9 +18,16 @@ public abstract class Komento {
         this.nollaa = nollaa;
         this.undo = undo;
         this.sovellus = sovellus;
+        this.edellinenArvo = 0;
     }
 
     public abstract void suorita();
+    
+    public void tallennaEdellinen(){
+
+        edellinenArvo = sovellus.tulos();
+
+    }
     
     public int arvo(TextField syotekentta){
         
@@ -33,7 +41,17 @@ public abstract class Komento {
         return arvo;
     }
     
-    public void paivitaGUI(int laskunTulos){
+    public void paivitaGUI(){
+        
+        asetteleGUIuuteenArvoon();
+        
+        undo.disableProperty().set(false);
+                
+    }
+    
+    private void asetteleGUIuuteenArvoon(){
+        
+        int laskunTulos = sovellus.tulos();
         
         syotekentta.setText("");
         tuloskentta.setText("" + laskunTulos);
@@ -43,11 +61,17 @@ public abstract class Komento {
         } else {
             nollaa.disableProperty().set(false);
         }
-        undo.disableProperty().set(false);
+   
     }
 
     public void peru(){
-        System.out.println("Peruutetaan joskus tulevaisuudessa - ei viela toteutettu");
+        
+        sovellus.nollaa();
+        sovellus.plus(edellinenArvo);
+        
+        asetteleGUIuuteenArvoon();
+        
+        undo.disableProperty().set(true);
     }
     
 }
